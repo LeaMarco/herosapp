@@ -9,18 +9,25 @@ import { getHero } from "../actions";
 import HeroCard from "./card";
 // import { findHeros } from "../actions";
 
+
 const TeamPreview = () => {
   let team = useSelector((state) => state.team);
   console.log(team, "buscadoss")
   
-  
+  const totalStat= (stat) =>{
+    console.log(team[0].powerstats[stat], "pruebaaa")
+    return(
+    team.map(hero => hero.powerstats[stat]==="null"?0:+hero.powerstats[stat]).reduce((a,b)=>a+b)
+    )
+  }
+
   let teamStats= team.length>0 ? [
-      {intelligence: team.map(hero => +hero.powerstats.intelligence).reduce((a,b)=>a+(b="null"?0:b))},
-      {strength: team.map(hero => +hero.powerstats.strength).reduce((a,b)=>a+(b="null"?0:b))},
-      {speed: team.map(hero => +hero.powerstats.speed).reduce((a,b)=>a+(b="null"?0:b))},
-      {durability: team.map(hero => +hero.powerstats.durability).reduce((a,b)=>a+(b="null"?0:b))},
-      {power: team.map(hero => +hero.powerstats.power).reduce((a,b)=>a+(b="null"?0:b))},
-      {combat: team.map(hero => +hero.powerstats.combat).reduce((a,b)=>a+(b="null"?0:b))},
+      {intelligence: totalStat('intelligence') },
+      {strength: totalStat('strength')},
+      {speed: totalStat('speed')},
+      {durability: totalStat('durability')},
+      {power: totalStat('power')},
+      {combat: totalStat('combat')},
   ] : null
 
 console.log(teamStats, "teamstats")
