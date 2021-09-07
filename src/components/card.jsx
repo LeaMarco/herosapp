@@ -8,6 +8,9 @@ const HeroCard = ({ data }) => {
   const dispatch = useDispatch();
   let team = useSelector((state) => state.team);
   let teamIds= team.map(hero => hero.id)
+  let badHeros = team.filter(hero=> hero.biography.alignment == "bad").length
+  let goodHeros = team.filter(hero=> hero.biography.alignment == "good").length
+
 
   return (
     <Card style={{ width: "20rem" }}>
@@ -35,14 +38,14 @@ const HeroCard = ({ data }) => {
           >
             Remove from team
           </Button>
-        ) : (
+        ) : data.data.biography.alignment == "bad" & badHeros<3 | data.data.biography.alignment == "good" & goodHeros<3 ?(
           <Button
             variant="primary"
             onClick={() => dispatch(addHero(data.data))}
           >
             Add to team
           </Button>
-        )}
+        ): <p>you have enought {data.data.biography.alignment} heroes</p>}
       </Card.Body>
     </Card>
   );

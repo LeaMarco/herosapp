@@ -17,7 +17,7 @@ const Home = () => {
   console.log(searched, "buscadoss")
   const [heros, setHeros] = useState();
   const [search, setSearch] = useState("");
-  const [amount, setAmount] = useState(6);
+  const [amount, setAmount] = useState(20);
   useEffect(() => {
     dispatch(getHero(amount));
   }, []);

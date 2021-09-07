@@ -21,6 +21,10 @@ const TeamPreview = () => {
     )
   }
 
+  let badHeros = team.filter(hero=> hero.biography.alignment == "bad").length
+  let goodHeros = team.filter(hero=> hero.biography.alignment == "good").length
+
+  console.log(team.filter(hero=> hero.biography.alignment == "bad").length, "malosss")
   let teamStats= team.length>0 ? [
       {intelligence: totalStat('intelligence') },
       {strength: totalStat('strength')},
@@ -37,6 +41,9 @@ console.log(teamStats, "teamstats")
       { team.length ? 
         <div>
         <h1>Team</h1>
+        <h5>Bad heroes: {badHeros}</h5>
+        <h5>Good heroes: {goodHeros}</h5>
+
         {
             // teamStats.sort().map(stat=> <p>{JSON.stringify(stat).replace(/['"]|[{]|[}]+/g,'')}</p>)
             teamStats.sort((a,b)=>(Object.values(b)-Object.values(a))).map(stat=> <p>{Object.keys(stat)}: {Object.values(stat)}</p>)
