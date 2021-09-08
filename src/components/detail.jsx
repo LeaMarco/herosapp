@@ -12,7 +12,6 @@ export function Detail() {
   const dispatch = useDispatch();
   const { id } = useParams();
   const [detail, setDetail] = useState("");
-  console.log(detail, "DETALLE");
   const detailHero = (id) => {
     axios
       .get(`https://www.superheroapi.com/api.php/10221366481211546/${id}`)

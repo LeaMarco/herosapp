@@ -34,7 +34,7 @@ const HeroCard = ({ data }) => {
           </div>
         </Card.Text>
         <Link to={`/detail/${data.data.id}`}>
-        <Button variant="primary" onClick={() => console.log("see details")}>
+        <Button variant="primary">
           View Details
         </Button>
         </Link>
