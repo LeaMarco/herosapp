@@ -1,0 +1,51 @@
+.background{
+    height: 90vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container{
+    max-width: 70rem;
+    width: 80%;
+    height: 80%;
+    background-color: whitesmoke;
+    border-radius: 1rem;
+    display: flex;
+}
+
+.container img{
+    border-bottom-left-radius: 1rem;
+    border-top-left-radius: 1rem;
+}
+
+.data{
+    display: flex;
+    width: 95%;
+    height: 80%;
+    margin-top: 10%;
+    margin-bottom: 10%;
+    margin-left: 5%;
+    flex-direction: column;
+}
+
+.data h4{
+    font-family: "Roboto";
+    font-weight: 500;
+    font-size: 1.3rem;
+}
+
+.data h1{
+    font-family: "Bebas Neue";
+}
+
+.powerstats{
+    display: flex;
+    justify-content: space-around;
+}
+
+.powerstats p{
+    font-family: "Roboto";
+    font-weight: 500;
+}
+
