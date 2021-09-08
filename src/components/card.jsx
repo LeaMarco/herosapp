@@ -3,10 +3,13 @@ import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
 import { addHero, removeHero } from "../actions";
 import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom"
 
 const HeroCard = ({ data }) => {
   const dispatch = useDispatch();
   let team = useSelector((state) => state.team);
+  let search = useSelector((state) => state.search);
+
   let teamIds= team.map(hero => hero.id)
   let badHeros = team.filter(hero=> hero.biography.alignment == "bad").length
   let goodHeros = team.filter(hero=> hero.biography.alignment == "good").length
@@ -14,7 +17,9 @@ const HeroCard = ({ data }) => {
 
   return (
     <Card style={{ width: "20rem" }}>
+      <Link to={`/detail/${data.data.id}`}> 
       <Card.Img variant="top" src={data.data.image.url} />
+      </Link>
       <Card.Body>
         <Card.Title>{data.data.name}</Card.Title>
         <Card.Text>

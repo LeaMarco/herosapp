@@ -1,16 +1,35 @@
-import { ADD_HERO, FIND_HERO, REMOVE_HERO, GET_HERO } from "./actionNames";
+import {
+  ADD_HERO,
+  FIND_HERO,
+  REMOVE_HERO,
+  GET_HERO,
+  CLEAR_HERO,
+} from "./actionNames";
 import axios from "axios";
 
-export function findHero(type, pageNumber) {
-  let ids = [Math.floor(Math.random() * 731)];
-  return (dispatch) => {
-    axios
-      .post(
-        `https://www.superheroapi.com/api.php/${process.env.REACT_APP_HOST_BACKEND}/${ids}`
+export function findHero(search) {
+  let findHeros = [];
+  return async (dispatch) => {
+    await axios
+      .get(
+        // `https://www.superheroapi.com/api.php/${process.env.API_KEY}/${ids}`
+        `https://www.superheroapi.com/api.php/10221366481211546/search/${search}`
       )
       .then((response) => {
-        dispatch({ type: FIND_HERO, payload: response.data });
+        response.data.results.map(async (hero) => {
+          await axios
+            .get(
+              // `https://www.superheroapi.com/api.php/${process.env.API_KEY}/${ids}`
+              `https://www.superheroapi.com/api.php/10221366481211546/${hero.id}`
+            )
+            .then((response) => findHeros.push(response));
+        });
       });
+
+    dispatch({
+      type: FIND_HERO,
+      payload: findHeros,
+    });
   };
 }
 
@@ -25,18 +44,15 @@ export function getHero(amount) {
             Math.random() * 731
           )}`
         )
-        .then((response) => {
-          heros.push(response);
-        })}
-        
-          dispatch({
-            type: GET_HERO,
-            payload: heros,
-          });
-        
+        .then((response) => heros.push(response));
     }
-  };
 
+    dispatch({
+      type: GET_HERO,
+      payload: heros,
+    });
+  };
+}
 
 export function addHero(payload) {
   return {
@@ -51,3 +67,10 @@ export function removeHero(payload) {
     payload,
   };
 }
+
+export function clearHero() {
+  return {
+    type: CLEAR_HERO,
+  };
+}
+
