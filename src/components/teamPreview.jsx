@@ -64,8 +64,8 @@ const TeamPreview = () => {
                 <h5>Good heroes: {goodHeros}</h5>
               </div>
               <div className={styles.averages}>
-                <h5>Avg weight: {averageWeight} kg</h5>
-                <h5>Avg height: {averageHeight} cm</h5>
+                <h5>Avg weight: {Math.ceil(averageWeight)} kg</h5>
+                <h5>Avg height: {Math.ceil(averageHeight)} cm</h5>
               </div>
               <div className={styles.powerstats}>
                 <h1>Powerstats</h1>

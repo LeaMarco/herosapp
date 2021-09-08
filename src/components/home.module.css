@@ -9,7 +9,7 @@
   }
 
   .container{
-    min-height:max-content;
+    min-height:100vh;
   }
 .search{
   margin-top: 1rem;
