@@ -5,6 +5,8 @@ import { addHero, removeHero } from "../actions";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom"
 
+import styles from "./teamCard.module.css"
+
 const TeamCard = ({ data }) => {
   const dispatch = useDispatch();
   let team = useSelector((state) => state.team);
@@ -17,7 +19,7 @@ const TeamCard = ({ data }) => {
 
 
   return (
-    <Card style={{ width: "15%" }}>
+    <Card className={styles.card}>
       <Link to={`/detail/${data.id}`}> 
       <Card.Img variant="top" src={data.image.url} />
       </Link>

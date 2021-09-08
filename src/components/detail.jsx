@@ -93,7 +93,7 @@ export function Detail() {
     </div>
   ) : (
     <div className={styles.background}>
-      <Spinner animation="border" />
+      <Spinner animation="border" variant="light"/>
     </div>
   );
 }

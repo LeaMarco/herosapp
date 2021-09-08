@@ -1,11 +1,15 @@
 .background{
-    height: 90vh;
+    min-height: 90vh;
+    height: auto;
     display: flex;
     align-items: center;
     justify-content: center;
 }
 
 .container{
+    margin-top: 5vh;
+    margin-bottom: 5vh;
+
     max-width: 70rem;
     width: 80%;
     height: 80%;
@@ -49,3 +53,19 @@
     font-weight: 500;
 }
 
+@media all and (max-width: 500px){
+    .container{
+        height: auto;
+        flex-direction: column;
+    }
+
+    .data h4{
+        font-size: 1rem;
+    }
+
+    .powerstats p{
+        font-size: .9rem;
+    }
+
+    
+}

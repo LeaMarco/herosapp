@@ -20,6 +20,10 @@
 .leftContainer {
     width: 20%;
     background-color: whitesmoke;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-content: space-around;
 }
 
 .rightContainer {
@@ -50,7 +54,7 @@
 }
 
 .averages h5{
-    font-size: 1.2rem;
+    font-size: 1rem;
 }
 
 .leftContainer h1{
@@ -65,4 +69,24 @@
 
 .powerstats p {
     font-family: "Roboto";
+}
+
+
+@media all and (max-width: 500px){
+    .infoContainer{
+        flex-direction: column;
+    }
+
+    .leftContainer{
+        width: 100%;
+    }
+
+    .rightContainer{
+        width: 100%;
+        flex-direction: column;
+    }
+
+    .teamContainer{
+        padding-bottom: 10%;
+    }
 }
