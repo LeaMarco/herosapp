@@ -30,6 +30,7 @@
 
 .infoContainer {
     display: flex;
+    justify-content: space-around;
 }
 
 .emptyContainer {
