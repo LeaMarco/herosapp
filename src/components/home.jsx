@@ -9,6 +9,7 @@ import TeamPreview from "./teamPreview";
 import { Link } from "react-router-dom";
 
 
+
 const Home = () => {
   
   const dispatch = useDispatch()
@@ -45,12 +46,12 @@ const Home = () => {
   }
 
   return (
-    <div>
+    <div className={styles.container}>
       <TeamPreview/>
       {actualSearch.length?
       <h3 onClick={()=>deleteSearch()} style={{cursor:"pointer"}}> delete search:{actualSearch}</h3>
     : 
-      <form onSubmit={(e) => handleSubmit(e)}>
+      <form className={styles.search}onSubmit={(e) => handleSubmit(e)}>
         <input
           type="text"
           placeholder="search hero by name"

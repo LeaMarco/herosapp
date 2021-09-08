@@ -18,7 +18,8 @@
 }
 
 .leftContainer {
-    width: 30%;
+    width: 20%;
+    background-color: whitesmoke;
 }
 
 .rightContainer {
@@ -29,4 +30,38 @@
 
 .infoContainer {
     display: flex;
+}
+
+.emptyContainer {
+    background-color: grey;
+    width: 100%;
+    height: 10vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: whitesmoke;
+    font-family: "Roboto";
+}
+
+.averages{
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.averages h5{
+    font-size: 1.2rem;
+}
+
+.leftContainer h1{
+    font-family: "Bebas Neue";
+
+    font-size: 2.5rem;
+}
+.powerstats h1{
+    font-family: "Bebas Neue";
+    font-size: 1.5rem;
+}
+
+.powerstats p {
+    font-family: "Roboto";
 }

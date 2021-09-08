@@ -1,13 +1,9 @@
 .App {
   text-align: center;
   background-image: repeating-linear-gradient(67.5deg, hsla(127,0%,46%,0.2) 0px, hsla(127,0%,46%,0.2) 0px,transparent 0px, transparent 1px,hsla(127,0%,46%,0.2) 1px, hsla(127,0%,46%,0.2) 3px,transparent 3px, transparent 4px,hsla(127,0%,46%,0.2) 4px, hsla(127,0%,46%,0.2) 6px),repeating-linear-gradient(0deg, hsla(127,0%,46%,0.2) 0px, hsla(127,0%,46%,0.2) 0px,transparent 0px, transparent 1px,hsla(127,0%,46%,0.2) 1px, hsla(127,0%,46%,0.2) 3px,transparent 3px, transparent 4px,hsla(127,0%,46%,0.2) 4px, hsla(127,0%,46%,0.2) 6px),linear-gradient(90deg, rgb(23,23,23),rgb(23,23,23));
-
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
+
 
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
@@ -15,26 +11,4 @@
   }
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
 
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}

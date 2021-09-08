@@ -42,12 +42,12 @@ const TeamPreview = () => {
   let teamStats =
     team.length > 0
       ? [
-          { intelligence: totalStat("intelligence") },
-          { strength: totalStat("strength") },
-          { speed: totalStat("speed") },
-          { durability: totalStat("durability") },
-          { power: totalStat("power") },
-          { combat: totalStat("combat") },
+          { Intelligence: totalStat("intelligence") },
+          { Strength: totalStat("strength") },
+          { Speed: totalStat("speed") },
+          { Durability: totalStat("durability") },
+          { Power: totalStat("power") },
+          { Combat: totalStat("combat") },
         ]
       : null;
 
@@ -55,40 +55,43 @@ const TeamPreview = () => {
     <>
       {team.length ? (
         <div className={styles.teamContainer}>
-
-          <div className={styles.teamTitle}>
-            <h1>Team</h1>
-            <h5>Bad heroes: {badHeros}</h5>
-            <h5>Good heroes: {goodHeros}</h5>
-          </div>
+            
           <div className={styles.infoContainer}>
-          <div className={styles.leftContainer}>
-            <div>
-              <h5>Avergae weight: {averageWeight}</h5>
-              <h5>Avergae height: {averageHeight}</h5>
-            </div>
-            <div className={styles.powerstats}>
-              {
-                // teamStats.sort().map(stat=> <p>{JSON.stringify(stat).replace(/['"]|[{]|[}]+/g,'')}</p>)
-                teamStats
-                .sort((a, b) => Object.values(b) - Object.values(a))
-                  .map((stat) => (
-                    <p>
-                      {Object.keys(stat)}: {Object.values(stat)}
-                    </p>
-                  ))
+            <div className={styles.leftContainer}>
+            <h1>Team</h1>
+              <div className={styles.averages}>
+                <h5>Bad heroes: {badHeros}</h5>
+                <h5>Good heroes: {goodHeros}</h5>
+              </div>
+              <div className={styles.averages}>
+                <h5>Avg weight: {averageWeight} kg</h5>
+                <h5>Avg height: {averageHeight} cm</h5>
+              </div>
+              <div className={styles.powerstats}>
+                <h1>Powerstats</h1>
+                {
+                  // teamStats.sort().map(stat=> <p>{JSON.stringify(stat).replace(/['"]|[{]|[}]+/g,'')}</p>)
+                  teamStats
+                    .sort((a, b) => Object.values(b) - Object.values(a))
+                    .map((stat) => (
+                      <p>
+                        {Object.keys(stat)}: {Object.values(stat)}
+                      </p>
+                    ))
                 }
+              </div>
             </div>
-          </div>
-          <div className={styles.rightContainer}>
-            {team.map((hero) => (
-              <TeamCard data={hero} />
+            <div className={styles.rightContainer}>
+              {team.map((hero) => (
+                <TeamCard data={hero} />
               ))}
+            </div>
           </div>
         </div>
-      </div>
       ) : (
-        <h5>your team is empty</h5>
+        <div className={styles.emptyContainer}>
+          <h5>Your team is empty</h5>
+        </div>
       )}
     </>
   );
