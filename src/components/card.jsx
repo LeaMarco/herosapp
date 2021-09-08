@@ -18,7 +18,7 @@ const HeroCard = ({ data }) => {
   return (
     <Card style={{ width: "20rem" }}>
       <Link to={`/detail/${data.data.id}`}> 
-      <Card.Img variant="top" src={data.data.image.url} />
+      <Card.Img variant="top" src={data.data.image.url} alt="Not image available"/>
       </Link>
       <Card.Body>
         <Card.Title>{data.data.name}</Card.Title>

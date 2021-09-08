@@ -16,7 +16,7 @@ function App() {
       <Route path="/login" component={Login} />
       <Route path="/detail/:id" component={Detail} />
       <Route path="/team" component={Team} />
-      <Route path="*" exact component={NotFound} />
+      {/* <Route component={NotFound} /> */}
     </div>
   );
 }
