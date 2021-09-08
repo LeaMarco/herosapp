@@ -33,9 +33,12 @@ const HeroCard = ({ data }) => {
             <p>aligment: {data.data.biography.alignment}</p>
           </div>
         </Card.Text>
+        <Link to={`/detail/${data.data.id}`}>
         <Button variant="primary" onClick={() => console.log("see details")}>
           View Details
         </Button>
+        </Link>
+
         {team?.length>0 && teamIds.includes(data.data.id) ? (
           <Button
             variant="primary"
@@ -57,3 +60,4 @@ const HeroCard = ({ data }) => {
 };
 
 export default HeroCard;
+
