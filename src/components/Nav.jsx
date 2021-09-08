@@ -12,7 +12,7 @@ export const Nav = () => {
 
   return (
     <div className={styles.container}>
-      <Link to="/home" className={styles.logo}>
+      <Link to="/" className={styles.logo}>
       <div className={styles.logo}>
       <h1 className={styles.heros}>Heros</h1>
       <h1 className={styles.app}>App</h1>

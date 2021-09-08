@@ -68,7 +68,7 @@ const Login = () => {
       ) : (
         <div>
           <h5>you are already singed in</h5>
-          <Link to="/home">return to home</Link>
+          <Link to="/">return to home</Link>
         </div>
       )}
       <ToastContainer />
