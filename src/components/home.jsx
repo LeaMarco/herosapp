@@ -85,9 +85,9 @@ const Home = () => {
             className={styles.amountSelect}
             style={isOpen ? { position: "absolute" } : { display: "none"}}
           >
-            <p onClick={() => setAmount(12)}>12</p>
-            <p onClick={() => setAmount(24)}>24</p>
-            <p onClick={() => setAmount(48)}>48</p>
+            <p onClick={() => {setAmount(12); setOpen(false)}}>12</p>
+            <p onClick={() => {setAmount(24); setOpen(false)}}>24</p>
+            <p onClick={() => {setAmount(48); setOpen(false)}}>48</p>
           </div>
         </div>
       </div>

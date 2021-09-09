@@ -23,7 +23,7 @@ const TeamCard = ({ data }) => {
   return (
     <Card className={styles.card}>
       <Link to={`/detail/${data.id}`}>
-        <Card.Img variant="top" src={data.image.url} />
+        <Card.Img variant="top" src={data.image.url} alt="Not image available"/>
       </Link>
       <Card.Body>
         <Card.Title>{data.name}</Card.Title>
