@@ -11,7 +11,6 @@ import { Link } from "react-router-dom";
 const Home = () => {
   const dispatch = useDispatch();
   let heros = useSelector((state) => state.search);
-
   const [search, setSearch] = useState("");
   const [amount, setAmount] = useState(12);
   const [isOpen, setOpen] = useState(false);
