@@ -8,8 +8,6 @@ import { Link } from "react-router-dom"
 const HeroCard = ({ data }) => {
   const dispatch = useDispatch();
   let team = useSelector((state) => state.team);
-  let search = useSelector((state) => state.search);
-
   let teamIds= team.map(hero => hero.id)
   let badHeros = team.filter(hero=> hero.biography.alignment == "bad").length
   let goodHeros = team.filter(hero=> hero.biography.alignment == "good").length

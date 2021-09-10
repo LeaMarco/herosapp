@@ -55,7 +55,7 @@ const TeamCard = ({ data }) => {
             Add to team
           </Button>
         ) : (
-          <p>you have enought {data.biography.alignment} heroes</p>
+          <div>you have enought {data.biography.alignment} heroes</div>
         )}
       </Card.Body>
     </Card>

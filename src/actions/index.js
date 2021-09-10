@@ -8,19 +8,17 @@ import {
 import axios from "axios";
 
 export function findHero(search) {
-  let findHeros = [];
   return async (dispatch) => {
+    let findHeros = [];
     await axios
       .get(
-        // `https://www.superheroapi.com/api.php/${process.env.API_KEY}/${ids}`
-        `https://www.superheroapi.com/api.php/10221366481211546/search/${search}`
+        `https://www.superheroapi.com/api.php/${process.env.REACT_APP_API_KEY}/search/${search}`
       )
       .then((response) => {
         response.data.results.map(async (hero) => {
           await axios
             .get(
-              // `https://www.superheroapi.com/api.php/${process.env.API_KEY}/${ids}`
-              `https://www.superheroapi.com/api.php/10221366481211546/${hero.id}`
+              `https://www.superheroapi.com/api.php/${process.env.REACT_APP_API_KEY}/${hero.id}`
             )
             .then((response) => findHeros.push(response));
         });
@@ -39,8 +37,7 @@ export function getHero(amount) {
     for (let i = 0; i < amount; i++) {
       await axios
         .get(
-          // `https://www.superheroapi.com/api.php/${process.env.API_KEY}/${ids}`
-          `https://www.superheroapi.com/api.php/10221366481211546/${Math.floor(
+          `https://www.superheroapi.com/api.php/${process.env.REACT_APP_API_KEY}/${Math.floor(
             Math.random() * 731
           )}`
         )

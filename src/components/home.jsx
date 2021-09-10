@@ -26,15 +26,20 @@ const Home = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(findHero(search));
+     dispatch(findHero(search));
     setTimeout(() => {
       setActualSearch(search);
     }, 1500);
     setOpen(false);
   };
 
-  const onSearchChange = ({ target }) => {
-    setSearch(target.value);
+  useEffect(()=>{
+    
+  }, [search])
+
+  const onSearchChange = (e) => {
+    e.preventDefault()
+    setSearch(e.target.value);
   };
 
   const deleteSearch = () => {
@@ -64,7 +69,7 @@ const Home = () => {
               type="text"
               placeholder="search hero by name"
               value={search}
-              onChange={onSearchChange}
+              onChange={(e)=>onSearchChange(e)}
             />
             <button type="submit">Search</button>
           </form>
@@ -91,8 +96,9 @@ const Home = () => {
         </div>
       </div>
       <div className={styles.contenedor}>
-        {heros?.length ? (
-          heros.map((hero) => <HeroCard data={hero} key={hero.data.id} />)
+        {console.log(heros, "heros en el map") }
+        {heros.length > 0 ? (
+          heros.map((hero, index) => <HeroCard data={hero} key={index} />)
         ) : (
           <Spinner animation="border" variant="light"/>
         )}

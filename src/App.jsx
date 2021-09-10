@@ -16,7 +16,7 @@ import { NotFound } from "./components/notFound";
 function App() {
   return (
     <div className="App">
-      <Route path="/" component={Nav} />
+      <Route component={Nav} />
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/login" component={Login} />
@@ -26,6 +26,6 @@ function App() {
       </Switch>
     </div>
   );
-}
+}           
 
 export default App;

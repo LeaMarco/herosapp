@@ -4,12 +4,11 @@ import styles from "./nav.module.css"
 
 export const Nav = () => {
   const redirect = useHistory();
-  if (!window.localStorage.getItem("alkemyToken") && window.location.href!=="http://localhost:3000/login") redirect.push("/login");
+  if (!window.localStorage.getItem("alkemyToken") && window.location.href!==`${process.env.REACT_APP_HOST_FRONT}/login`) redirect.push("/login");
   const logOut = () => {
     window.localStorage.removeItem("alkemyToken");
     redirect.push("/login");
   };
-
   return (
     <div className={styles.container}>
       <Link to="/" className={styles.logo}>
