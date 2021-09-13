@@ -96,7 +96,6 @@ const Home = () => {
         </div>
       </div>
       <div className={styles.contenedor}>
-        {console.log(heros, "heros en el map") }
         {heros.length > 0 ? (
           heros.map((hero, index) => <HeroCard data={hero} key={index} />)
         ) : (

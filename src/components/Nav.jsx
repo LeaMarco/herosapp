@@ -9,7 +9,6 @@ export const Nav = () => {
     window.localStorage.removeItem("alkemyToken");
     redirect.push("/login");
   };
-  console.log(window.location.href, "windows location", `${process.env.REACT_APP_HOST_FRONT}/login`, "ubicacion variable de entorno")
   return (
     <div className={styles.container}>
       <Link to="/" className={styles.logo}>
